@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #2f3542;
+    padding: 40px 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tracker-container {
+    max-width: 950px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: #1e3c72;
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+header h1 i {
+    color: #ff4757;
+}
+
+.badge {
+    font-size: 0.9rem;
+    background: #ff4757;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
+header p {
+    color: #747d8c;
+    font-size: 1.05rem;
+}
+
+/* Upgraded Stat Cards with Logos */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.card.basic-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.card-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.blue-bg { background: rgba(30, 60, 114, 0.1); color: #1e3c72; }
+.green-bg { background: rgba(46, 213, 115, 0.1); color: #2ed573; }
+
+.card-info h3 {
+    font-size: 0.85rem;
+    color: #747d8c;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2f3542;
+}
+
+/* Layout Columns */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 35px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .summary-cards { grid-template-columns: 1fr; }
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #1e3c72;
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Icon Inputs Setup */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-logo {
+    position: absolute;
+    left: 15px;
+    color: #a4b0be;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 1px solid #ced6e0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: #1e3c72;
+    box-shadow: 0 0 0 4px rgba(30, 60, 114, 0.15);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+#add-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#add-btn:hover {
+    filter: brightness(1.1);
+}
+
+/* Log View Table Design */
+.table-wrapper {
+    background: #fff;
+    border: 1px solid #e8ecef;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 16px;
+    font-size: 0.95rem;
+}
+
+th {
+    background: #f1f2f6;
+    color: #57606f;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
+}
+
+td {
+    border-bottom: 1px solid #f1f2f6;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Pulse Keyframe for App Heartbeat Logo */
+.animate-pulse {
+    animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    20% { transform: scale(1.15); }
+    40% { transform: scale(1.05); }
+    60% { transform: scale(1.15); }
+}

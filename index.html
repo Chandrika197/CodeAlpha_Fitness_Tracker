@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha - Premium Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="tracker-container">
+        <header>
+            <h1><i class="fas fa-heartbeat animate-pulse"></i> FitTrack <span class="badge">Pro</span></h1>
+            <p>Log your activities and automate your caloric metrics instantly</p>
+        </header>
+
+        <div class="summary-cards">
+            <div class="card basic-card">
+                <div class="card-icon-wrapper blue-bg">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Total Workouts</h3>
+                    <p id="total-workouts">0</p>
+                </div>
+            </div>
+            
+            <div class="card basic-card">
+                <div class="card-icon-wrapper green-bg">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Calories Burned</h3>
+                    <p id="total-calories">0 kcal</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="form-section">
+                <h2><i class="fas fa-plus-circle"></i> Log Activity</h2>
+                <form id="workout-form">
+                    <div class="input-group">
+                        <label for="exercise">Select Exercise Profile</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-running input-logo"></i>
+                            <select id="exercise" required>
+                                <option value="" disabled selected>Choose an exercise...</option>
+                                <option value="running">Running (Fast Pace)</option>
+                                <option value="cycling">Cycling (Moderate)</option>
+                                <option value="swimming">Swimming</option>
+                                <option value="walking">Brisk Walking</option>
+                                <option value="yoga">Yoga / Stretching</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-clock input-logo"></i>
+                            <input type="number" id="duration" min="1" placeholder="e.g., 30" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="add-btn">
+                        <i class="fas fa-calculator"></i> Log & Calculate
+                    </button>
+                </form>
+            </div>
+
+            <div class="history-section">
+                <h2><i class="fas fa-history"></i> Performance History</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Exercise</th>
+                                <th>Duration</th>
+                                <th>Burned</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="log-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
